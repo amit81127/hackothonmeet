@@ -5,12 +5,10 @@ body{
     min-height: 100vh;
 
 }
-.container{
-    flex: 1;
-}
 .navbar{
-    
     background-color: white;
+    cursor: pointer;
+
 }
 .fa-compass{
     color:red;

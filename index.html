@@ -1,5 +1,9 @@
-
-<%- layout("/layouts/boilerplate")%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Showcase</title>
     <style>
         /* General Reset */
         * {
@@ -19,6 +23,30 @@
             text-decoration: none;
             color: inherit;
         }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        nav ul li {
+            font-size: 1rem;
+            font-weight: bold;
+        }
+
         .hero {
             display: flex;
             align-items: center;
@@ -112,7 +140,7 @@
 
         }
         .img{
-            background-image: url("https://img.freepik.com/free-vector/hackathon-technology-infographic-with-flat-icons_88138-961.jpg");
+            background-image: url("https://files.oaiusercontent.com/file-KYweUPPKyzi38gy5CyteUU?se=2025-01-09T10%3A51%3A09Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D07821276-6831-4d9f-a798-6921b2e0c3e2.webp&sig=q4ADOhFOmK2VI6gwDYJYEP79A1LwH2NB1FKFqNUauA0%3D");
             height: 500px;
             width: 500px;
             background-size: cover;
@@ -130,18 +158,13 @@
             width: 500px;
             background-size: cover;
             background-position: center;
-            margin-top: 150px;
-            margin-left: 150px;
-            margin-bottom: 150px;
-            margin-right: 100px;
+            margin: 200px;
             overflow: hidden;
             border-radius: 30%;
             background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoR8bzppiYo9rIHOaSkENUMfX0qD6fefoskA&s") /* Example image URL */
         }
         .ti{
-            height: 400px;
-            width: 750px;
-            margin-top: 150px;
+            margin-top: 280px;
         }
         .sec2{
             background: linear-gradient(120deg, #e0e0e0, #ffffff);
@@ -186,9 +209,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
-       
             padding: 50px;
-            
+            margin: 9rem;
             background: linear-gradient(120deg, #e0e0e0, #ffffff);
         }
         .section .left {
@@ -235,7 +257,15 @@
     </style>
 </head>
 <body>
-
+<!-- Navigation Bar -->
+    <nav>
+        <div class="logo">AMIT Showcase</div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#collab">Collab</a></li>
+            <li><a href="#chat">Chat</a></li>
+        </ul>
+    </nav>    
 
     <!-- Hero Section -->
     <section id="home" class="hero">
@@ -260,10 +290,10 @@
     </div>
     <div class="ti">
         <h1><b>Discover hackathons in India</b></h1>
-        <br><br><br>
-        <h4>welcome to HackChat,your go-to platform for connectong with like-minded individuals passionate about hackathons in india.Stay updated on the latest
-        hackathon events,collaborate with fellow hackers,and find partners to take your project to the next level.Join the vibrate community of innovators and problem-
-    solvers pushing the boundaries of technology and creativity.Explore hackathons that challenge conventional thinking and inspire groundbreaking solutions.</h4>
+        <br><br><br><br><br><br>
+        <h4>welcome to HackChat,your go-to platform for connectong with like-minded <br>individuals passionate about hackathons in india.Stay updated on the latest<br>
+        hackathon events,collaborate with fellow hackers,and find partners to take your<br>project to the next level.Join the vibrate community of innovators and problem-<br>
+    solvers pushing the boundaries of technology and creativity.Explore hackathons <br>that challenge conventional thinking and inspire groundbreaking solutions.</h4>
     <button>Explore</button>
     </div>
    </div>

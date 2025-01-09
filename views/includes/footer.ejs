@@ -1,14 +1,70 @@
 <footer>
-    <div class="f-info">
-        <div class="f-info-socials">
-            <i class="fa-brands fa-square-facebook"></i>
-            <i class="fa-brands fa-square-instagram"></i>
-            <i class="fa-brands fa-linkedin"></i>
+    <div class="footer-container">
+        <div class="footer-content">
+            <h3>HackChat</h3>
+            <p>Your ultimate hackathon destination. Connect. Collaborate. Create.</p>
+            <div class="social-media">
+                <a href="https://facebook.com" target="_blank">
+                    <img src="https://img.icons8.com/fluent/48/000000/facebook-new.png" alt="Facebook">
+                </a>
+                <a href="https://twitter.com" target="_blank">
+                    <img src="https://img.icons8.com/fluent/48/000000/twitter.png" alt="Twitter">
+                </a>
+                <a href="https://instagram.com" target="_blank">
+                    <img src="https://img.icons8.com/fluent/48/000000/instagram-new.png" alt="Instagram">
+                </a>
+                <a href="https://linkedin.com" target="_blank">
+                    <img src="https://img.icons8.com/fluent/48/000000/linkedin.png" alt="LinkedIn">
+                </a>
+            </div>
         </div>
-        <div class="f-info-brand">&copy;MeetHack Private Limited</div>
-        <div class="f-info-links">
-            <a href="/privacy">Privacy</a>
-            <a href="/terms">Terms</a>
+        <div class="footer-bottom">
+            <p>&copy; 2025 HackChat. All rights reserved.</p>
         </div>
     </div>
 </footer>
+
+<style>
+    footer {
+        background: #333;
+        color: #fff;
+        padding: 2rem 0;
+        text-align: center;
+    }
+    .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
+    }
+    .footer-content {
+        margin-bottom: 1rem;
+    }
+    .footer-content h3 {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+    }
+    .footer-content p {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+    .social-media a {
+        margin: 0 0.5rem;
+        display: inline-block;
+    }
+    .social-media img {
+        width: 40px;
+        height: 40px;
+        transition: transform 0.3s ease;
+    }
+    .social-media img:hover {
+        transform: scale(1.1);
+    }
+    .footer-bottom {
+        border-top: 1px solid #444;
+        padding-top: 1rem;
+    }
+    .footer-bottom p {
+        font-size: 0.9rem;
+        margin: 0;
+    }
+</style>
