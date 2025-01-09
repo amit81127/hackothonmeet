@@ -11,12 +11,19 @@ const ejsMate= require("ejs-mate");
 
 app.use(express.json());
 
-app.use("/",(req,res)=>{
+app.set("view engine", "ejs");
+app.set("views",path.join(__dirname,"views"));
+app.use(express.urlencoded({extended:true}));
+app.use(methodOverride("_method"));
+app.engine("ejs",ejsMate);
+app.use(express.static(path.join(__dirname,"/public")));
+
+app.get("/",(req,res)=>{
     res.send('Hello, World!');
 });
 
 app.get("/chat",(req,res)=>{
-    res.render("chating/main.ejs");
+    res.render("chating/main");
     
 })
 
@@ -33,12 +40,6 @@ async function main(){
      await mongoose.connect(MONGO_URL);
 };
 
-app.set("view engine", "ejs");
-app.set("views",path.join(__dirname,"views"));
-app.use(express.urlencoded({extended:true}));
-app.use(methodOverride("_method"));
-app.engine("ejs",ejsMate);
-app.use(express.static(path.join(__dirname,"/public")));
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
