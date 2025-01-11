@@ -1,6 +1,13 @@
+if(process.env.NODE_ENV !== 'production'){
+    require('dotenv').config();
+}
 const express = require('express');
 const mongoose = require('mongoose');
 const Hackathon= require('./models/hackathon');
+const  {hackathonSchema} = require("./schema.js");
+const multer  = require('multer')
+const {storage}=require("./cloudConfig.js");
+const upload = multer({ storage });
 
 
 const app = express();
@@ -29,6 +36,17 @@ app.get("/chat",(req,res)=>{
 app.get("/chat/hackathon",async(req,res)=>{
     const allHackathon= await Hackathon.find({});
     res.render("chating/hackathon",{allHackathon});
+});
+app.get("/chat/hackathon/new",async(req,res)=>{
+    res.render("chating/newHackathon");
+});
+app.post("/chat/hackathon",upload.single('hackathon[image]'),async(req,res)=>{
+    let url=req.file.path;
+    const newHackathon = new Hackathon(req.body.hackathon);
+    // newHackathon.owner = req.user._id;
+    newHackathon.image={url:req.file.path};
+    await newHackathon.save();
+    res.redirect("/chat/hackathon");
 })
 
 

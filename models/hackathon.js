@@ -9,9 +9,10 @@ const hackathonSchema= new Schema({
      unique: true
    },
    description: String,
-  image: 
-     String,
-  
+   image: {
+    url: String,
+    // other properties if needed
+},
   entryPrice: Number,
   location: String,
   registration:{

@@ -57,6 +57,19 @@
     .ph .hack-card{
         margin: 3rem;
 
+    }.lis{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }.lis button{
+        width: 10rem;
+    }img{
+        left: 0;
+        width: 170px;
+        height: 300px;
+        object-fit: cover;
+        margin: 1rem;
+        transition: transform 0.3s ease;
     }
 
 </style>
@@ -94,14 +107,24 @@
        </div>
     </div>
     <div class="ph">
-        <h1>Recent Hackathon</h1>
+        <div class="lis">
+            <h1>Recent Hackathon</h1>
+            <div>
+                <h2>List your Hackathon Event</h2>
+                <a href="/chat/hackathon/new"><button class="btn btn-primary">Create</button></a>
+            </div>
+        
+        </div>
+        
         <div class="hack-card row row-cols-lg-2 row-cols-3 row-cols-md-4 g-2">
         <% for(let hackathon of allHackathon){%>
         
             <div class="card mb-3 m-3" style="max-width: 540px;">
                 <div class="row g-0">
                   <div class="col-md-4">
-                    <img src="<%=hackathon.image%>" class="img-fluid rounded-start" alt="Please wait">
+                    <% if (hackathon.image && hackathon.image.url) { %>
+                        <img src="<%= hackathon.image.url %>" alt="<%= hackathon.title %> ">
+                    <% } %>
                   </div>
                   <div class="col-md-8">
                     <div class="card-body">
@@ -110,6 +133,9 @@
                       <p class="card-text">Entry Price:<%=hackathon.entryPrice%></p>
                       <p class="card-text"><small class="text-body-secondary">Location:<%=hackathon.location%></small></p>
                       <a href="<%=hackathon.registration%>" class="btn btn-primary">Register Now</a>
+                      <br><br><br>
+                     
+
                     </div>
                   </div>
                 </div>
