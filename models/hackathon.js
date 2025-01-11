@@ -9,12 +9,12 @@ const hackathonSchema= new Schema({
      unique: true
    },
    description: String,
-  image: {
-    url: String,
-  },
+  image: 
+     String,
+  
   entryPrice: Number,
   location: String,
-  url:{
+  registration:{
     type: String,
     required: true,
     unique: true

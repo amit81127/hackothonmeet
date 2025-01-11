@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const Hackathon= require('./models/hackathon');
 
 
 const app = express();
@@ -25,8 +26,9 @@ app.get("/",(req,res)=>{
 app.get("/chat",(req,res)=>{
     res.render("chating/main");
 })
-app.get("/chat/hackathon",(req,res)=>{
-    res.render("chating/hackathon");
+app.get("/chat/hackathon",async(req,res)=>{
+    const allHackathon= await Hackathon.find({});
+    res.render("chating/hackathon",{allHackathon});
 })
 
 

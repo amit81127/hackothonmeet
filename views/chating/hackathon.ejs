@@ -1,0 +1,126 @@
+<%- layout("/layouts/boilerplate")%>
+<style>
+    
+    .search{
+        background: linear-gradient(120deg, #e0e0e0, #ffffff);
+       padding: 5rem;
+    }
+    
+    .search-bar{
+        margin: 3rem;
+      
+        margin-bottom: 2rem;
+       
+        display: flex;
+    }
+    input{
+        width: 50%;
+        padding: 0.5rem;
+        border-radius: 5px;
+        border: none;
+        outline: none;
+        margin-right: 1rem;
+    }
+    button{
+        background: #007BFF;
+        color: #fff;
+        padding: 0.5rem 1rem;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        outline: none;
+        margin-left: 1rem;
+    }
+    .bar{
+        display: flex;
+    }
+    .bar-text{
+        display: flex;
+        align-items: center;
+        margin-right: 1rem;
+       background-color: #ffffff;
+       border: 1px solid #e0e0e0;
+       height: 50px;
+       width: 400px;
+       padding: 1rem;
+       border-radius: 10px;
+       margin-left: 20px;
+       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }.bar-text i{
+        margin-right: 1rem;
+        font-size: 20px;
+        color: black;
+        transition: transform 0.3s ease;
+    }.ph{
+        margin: 3rem;
+    }
+    .ph .hack-card{
+        margin: 3rem;
+
+    }
+
+</style>
+<div class="main">
+    <div class="search">
+      <h1>Your Ultimate Hackathon Hub!</h1>
+      <h2>Connect.Collabrate.Create.</h2>
+      <div class="search-bar">
+        <input type="text" placeholder="Search for hackathons">
+        <button>Search</button>
+    </div>
+    <br>
+    <br>
+    <hr>
+    <h3>Hackathon</h3>
+    <br>
+    <br>
+
+    <div class="bar">
+       <div class="bar-text">
+        <i class="fa-solid fa-code"></i>
+        <h4><i>Coding</i></h4>
+       </div>
+       <div class="bar-text">
+        <i class="fa-brands fa-android"></i>
+        <h4><i>Mobile Development</i></h4>
+       </div>
+       <div class="bar-text">
+        <i class="fa-solid fa-robot"></i>
+        <h4><i>Robotics</i></h4>
+       </div>
+       <div class="bar-text">
+        <i class="fa-regular fa-window-maximize"></i>
+        <h4><i>Web Development</i></h4>
+       </div>
+    </div>
+    <div class="ph">
+        <h1>Recent Hackathon</h1>
+        <div class="hack-card row row-cols-lg-2 row-cols-3 row-cols-md-4 g-2">
+        <% for(let hackathon of allHackathon){%>
+        
+            <div class="card mb-3 m-3" style="max-width: 540px;">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="<%=hackathon.image%>" class="img-fluid rounded-start" alt="Please wait">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">title:<%=hackathon.title%></h5>
+                      <p class="card-text">Description:<%=hackathon.description%></p>
+                      <p class="card-text">Entry Price:<%=hackathon.entryPrice%></p>
+                      <p class="card-text"><small class="text-body-secondary">Location:<%=hackathon.location%></small></p>
+                      <a href="<%=hackathon.registration%>" class="btn btn-primary">Register Now</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+         
+         <%}%>
+        </div>
+         
+    </div>
+
+  
+    </div>
+</div>
+
