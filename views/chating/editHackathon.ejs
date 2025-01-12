@@ -1,0 +1,44 @@
+<% layout("/layouts/boilerplate")%>
+<div class="row">
+    <div class="col-8 offset-2">
+        <br><br>
+<h3>Edit your Event</h3>
+    <form method="POST" action="/chat/hackathon/<%=hackathon._id%>?_method=PUT"  novalidate class="needs-validation">
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input name="hackathon[title]" value="<%=hackathon.title%>" type="text" class="form-control" required>
+            <div class="invalid-feedback">please enter Title</div>
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea name="hackathon[description]"  type="text" class="form-control"><%=hackathon.description%></textarea>
+                <div class="invalid-feedback">please enter description</div></textarea>
+        </div>
+
+        <div class="mb-3">
+            <label for="image" class="form-label">Image</label>
+            <input name="hackathon[image]" value="<%=hackathon.image%>" type="text"  class="form-control" >
+            <div class="invalid-feedback">please enter vaild link</div>
+        </div>
+        <div class="row">
+        <div class="mb-3 col-md-4">
+            <label for="entryPrice" class="form-label">Price</label>
+            <input name="hackathon[entryPrice]" value="<%=hackathon.entryPrice%>" type="number"  class="form-control" required>
+            <div class="invalid-feedback">please enter Price</div>
+        </div>
+        <div class="mb-3">
+            <label for="location" class="form-label">Location</label>
+            <input name="hackathon[location]" value="<%=hackathon.location%>" type="text"  class="form-control" required>
+            <div class="invalid-feedback">please enter Location</div>
+        </div>
+        <div class="mb-3 col-8">
+            <label for="registration" class="form-label">Registration Link</label>
+            <input name="hackathon[registration]" value="<%=hackathon.registration%>"  type="text" class="form-control" id="registration">
+            <div class="invalid-feedback">Please enter the Registration link</div>
+           </div>
+        <button class="btn btn-dark edit-btn">Add</button>
+        <br><br>
+    </form>
+    </div>
+    </div>
+   

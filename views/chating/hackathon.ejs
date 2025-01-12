@@ -66,10 +66,24 @@
     }img{
         left: 0;
         width: 170px;
-        height: 300px;
+        height: 400px;
         object-fit: cover;
         margin: 1rem;
         transition: transform 0.3s ease;
+    }.btt{
+        display: flex;
+        margin: 20px;
+        bottom: 0;
+        left: 0;
+    }.btt a button{
+        
+        width: 5rem;
+        color: #fff;
+        padding: 0.5rem 1rem;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        
     }
 
 </style>
@@ -122,9 +136,9 @@
             <div class="card mb-3 m-3" style="max-width: 540px;">
                 <div class="row g-0">
                   <div class="col-md-4">
-                    <% if (hackathon.image && hackathon.image.url) { %>
-                        <img src="<%= hackathon.image.url %>" alt="<%= hackathon.title %> ">
-                    <% } %>
+                   
+                        <img src="<%= hackathon.image %>" alt="<%= hackathon.title %> ">
+                  
                   </div>
                   <div class="col-md-8">
                     <div class="card-body">
@@ -132,15 +146,24 @@
                       <p class="card-text">Description:<%=hackathon.description%></p>
                       <p class="card-text">Entry Price:<%=hackathon.entryPrice%></p>
                       <p class="card-text"><small class="text-body-secondary">Location:<%=hackathon.location%></small></p>
-                      <a href="<%=hackathon.registration%>" class="btn btn-primary">Register Now</a>
+                      <a href="<%=hackathon.registration%>" class="btn btn-primary">Register Now</a><br><br>
+                     <div class="btt">
+                      <span> <a href="/chat/hackathon/<%=hackathon._id%>/edit" class="btn btn-dark edit-btn">Edit </a></span>
+                         <span> <form method="POST" action="/chat/hackathon/<%=hackathon._id%>?_method=DELETE">
+                             <button class="btn btn-dark   ">Delete </button>
+                         </form></span>
+                        </div>
                       <br><br><br>
-                     
 
                     </div>
                   </div>
+                  
                 </div>
+
               </div>
-         
+             
+            
+                   
          <%}%>
         </div>
          

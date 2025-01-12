@@ -44,8 +44,30 @@ app.post("/chat/hackathon",async(req,res)=>{
     const newHackathon =new Hackathon(req.body.hackathon);
     console.log(newHackathon)
     await newHackathon.save();
-     res.redirect("/chat/hackathon");
+     res.redirect("/chating/hackathon");
 })
+//Edit Route
+app.get("/chat/hackathon/:id/edit", async (req, res) => {
+    let { id } = req.params;
+    const hackathon = await Hackathon.findById(id);
+    res.render("chating/editHackathon", { hackathon });
+  });
+  
+  //Update Route
+  app.put("/chat/hackathon/:id", async (req, res) => {
+    let { id } = req.params;
+    await Hackathon.findByIdAndUpdate(id, { ...req.body.hackathon });
+    res.redirect("/chat/hackathon");
+  });
+
+//Delete Route
+app.delete("/chat/hackathon/:id", async (req, res) => {
+    let { id } = req.params;
+    let deletedHackathon = await Hackathon.findByIdAndDelete(id);
+    console.log(deletedHackathon);
+    res.redirect("/chat/hackathon");
+  });
+  
 
 
 const MONGO_URL = "mongodb://127.0.0.1:27017/chat";
