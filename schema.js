@@ -1,8 +1,9 @@
 const Joi = require('joi');
 
 
+
 module.exports.hackathonSchema=Joi.object({
-    listing:Joi.object({
+    hackathon:Joi.object({
         title:Joi.string().required(),
         description:Joi.string().required(),
         location:Joi.string().required(),

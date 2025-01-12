@@ -8,7 +8,7 @@ const  {hackathonSchema} = require("./schema.js");
 const multer  = require('multer')
 const {storage}=require("./cloudConfig.js");
 const upload = multer({ storage });
-
+const MongoStore = require('connect-mongo');
 
 const app = express();
 const path = require("path");
@@ -40,13 +40,11 @@ app.get("/chat/hackathon",async(req,res)=>{
 app.get("/chat/hackathon/new",async(req,res)=>{
     res.render("chating/newHackathon");
 });
-app.post("/chat/hackathon",upload.single('hackathon[image]'),async(req,res)=>{
-    let url=req.file.path;
-    const newHackathon = new Hackathon(req.body.hackathon);
-    // newHackathon.owner = req.user._id;
-    newHackathon.image={url:req.file.path};
+app.post("/chat/hackathon",async(req,res)=>{
+    const newHackathon =new Hackathon(req.body.hackathon);
+    console.log(newHackathon)
     await newHackathon.save();
-    res.redirect("/chat/hackathon");
+     res.redirect("/chat/hackathon");
 })
 
 

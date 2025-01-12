@@ -4,38 +4,38 @@
     <div class="row">
         <div class="col-8 offset-2">
             <br><br>
-    <form method="POST" action="/chat/hackathon" novalidate class="needs-validation" enctype="multipart/form-data">
+    <form method="POST" action="/chat/hackathon" novalidate class="needs-validation" >
         <div class="mb-3">
             <label for="title" class="form-label">Title</label>
-            <input name="hackathon[title]" placeholder="Add a catchy title" type="text" class="form-control" required>
+            <input name="hackathon[title]" placeholder="Add a catchy title" type="text" class="form-control" id="title" >
             <div class="invalid-feedback">please enter Title</div>
             
         </div>
          <div class="mb-3">
             <label for="description" class="form-label">Description</label>
-            <textarea name="hackathon[description]" placeholder="enter description" type="text" class="form-control" ></textarea>
+            <textarea name="hackathon[description]" placeholder="enter description" type="text" class="form-control" id="description" ></textarea>
             <div class="invalid-feedback">please enter description</div>
          </div>
       <div class="mb-3">
         <label for="image" class="form-label">Uplode Image</label>
-        <input name="hackathon[image]" type="file"  class="form-control" required >
+        <input name="hackathon[image]" type="text"  class="form-control" id="image">
         <div class="invalid-feedback">please enter vaild link</div>
     </div>
           <div class="row">
         <div class="mb-3 col-md-4 ">
             <label for="entryPrice" class="form-label">Entry Price</label>
-            <input name="hackathon[entryPrice]" placeholder="1200" type="number" class="form-control" required>
+            <input name="hackathon[entryPrice]" placeholder="1200" type="number" class="form-control" id="entryPrice" >
             <div class="invalid-feedback">Please enter valid price</div>
         </div>
     </div>
       <div class="mb-3">
         <label for="location" class="form-label">Location</label>
-        <input name="hackathon[location]" placeholder="Goa" type="text" class="form-control" required>
+        <input name="hackathon[location]" placeholder="Uttar Pradesh" type="text" class="form-control" id="location">
         <div class="invalid-feedback">Please enter the Location name</div>
       </div>
       <div class="mb-3 col-8">
         <label for="registration" class="form-label">Registration Link</label>
-        <input name="hackathon[registration]"  type="text" class="form-control" required>
+        <input name="hackathon[registration]"  type="text" class="form-control" id="">
         <div class="invalid-feedback">Please enter the Registration link</div>
        </div>
       <br>
