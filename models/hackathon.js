@@ -18,7 +18,11 @@ const hackathonSchema = new Schema({
     type: String,
     required: true,
     unique: true
-  }
+  },
+  owner:{
+    type:Schema.Types.ObjectId,
+    ref:"User",
+  },
 });
 
 const Hackathon = mongoose.model("Hackathon", hackathonSchema);

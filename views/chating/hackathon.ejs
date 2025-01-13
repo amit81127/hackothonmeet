@@ -147,12 +147,21 @@
                       <p class="card-text">Entry Price:<%=hackathon.entryPrice%></p>
                       <p class="card-text"><small class="text-body-secondary">Location:<%=hackathon.location%></small></p>
                       <a href="<%=hackathon.registration%>" class="btn btn-primary">Register Now</a><br><br>
+                    
                      <div class="btt">
-                      <span> <a href="/chat/hackathon/<%=hackathon._id%>/edit" class="btn btn-dark edit-btn">Edit </a></span>
-                         <span> <form method="POST" action="/chat/hackathon/<%=hackathon._id%>?_method=DELETE">
-                             <button class="btn btn-dark   ">Delete </button>
-                         </form></span>
+                 
+                            <span>
+                              <a href="/chat/hackathon/<%= hackathon._id %>/edit" class="btn btn-dark edit-btn">Edit</a>
+                            </span>
+                            <span>
+                              <form method="POST" action="/chat/hackathon/<%= hackathon._id %>?_method=DELETE">
+                                <button class="btn btn-dark">Delete</button>
+                              </form>
+                            </span>
+                         
                         </div>
+                       
+                      
                       <br><br><br>
 
                     </div>
